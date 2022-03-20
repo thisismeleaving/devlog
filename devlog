@@ -1,7 +1,7 @@
 #!/bin/bash
 LOGFILE=$1
 tail -f ${1-$LOGFILE} | awk '
-  /ERROR|Tracebock|Exception/ {print "\033[1;31m" $0 "\033[0m"; next}
+  /ERROR|Traceback|Exception/ {print "\033[1;31m" $0 "\033[0m"; next}
   /WARNING/ {print "\033[1;33m" $0 "\033[0m"; next}
   /INFO/ {print "\033[1;32m" $0 "\033[0m"; next}
   /DEBUG/ {print "\033[1;39m" $0 "\033[0m"; next}
